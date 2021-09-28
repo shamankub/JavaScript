@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Homework 2: Task 6</title>
+</head>
+
+<body>
+    <script>
+		'use strict';
+		let num = prompt('Введите количество денег, которое вы хотите положить на счет в банке:');
+		let last_digit = num % 10;
+		switch (last_digit){
+			case 1:
+				alert('Ваша сумма в '+ num + ' рубль успешно зачислена.');
+				break;
+			case 2:
+			case 3:
+			case 4:
+				alert('Ваша сумма в '+ num + ' рубля успешно зачислена.');
+				break;
+			case 5:
+			case 6:
+			case 7:
+			case 8:
+			case 9:
+			case 0:
+				alert('Ваша сумма в '+ num + ' рублей успешно зачислена.');
+				break;
+		}
+	</script>
+</body>
+
+</html>	
