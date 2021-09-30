@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Homework 3: Task 3</title>
+</head>
+
+<body>
+    <script>
+    	//Перед вами находится массив с продуктами, сегодня распродажа и вам нужно на каждый товар применить скидку	15%, можете использовать метод forEach
+    	'use strict';
+    	const products = [
+			{
+				id: 3,
+				price: 200,
+			},
+			{
+				id: 4,
+				price: 900,
+			},
+			{
+				id: 1,
+				price: 1000,
+			},
+		];
+		
+		function discount(el) {
+			let before_discount = el.price;
+			el.price *= 0.85;
+			console.log(`${before_discount} -15% => ${el.price}`);
+		}
+
+		products.forEach(discount);
+		console.log(products);
+	</script>
+</body>
+
+</html>	
