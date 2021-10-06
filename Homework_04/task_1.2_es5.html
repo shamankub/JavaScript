@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 4: Task 1.2 es5</title>
+</head>
+<body>
+    <script>
+        'use strict';
+
+        function Post(author, text, date) {
+            this.author = author;
+            this.text = text;
+            this.date = date;
+        }
+
+        function AttachedPost(author, text, date) {
+            Post.call(this, author, text, date);
+            this.highlighted = false;
+        }
+
+        Post.prototype.edit = function(new_text) {
+            this.text = new_text;
+        };
+
+        AttachedPost.prototype = Object.create(Post.prototype);
+        AttachedPost.prototype.constructor = AttachedPost;
+        AttachedPost.prototype.makeTextHighlighted = function() {
+            this.highlighted = true;
+        };        
+
+        let obj1 = new Post('Автор', 'текст', 'дата');
+        obj1.edit('Новый текст');
+        console.log(obj1.text);
+        let obj2 = new AttachedPost('Автор 2', 'текст 2', 'дата 2');
+        obj2.edit('Новый текст 2');
+        console.log(obj2);
+        console.log(obj2.highlighted);
+        obj2.makeTextHighlighted();
+        console.log(obj2.highlighted);
+    </script>
+</body>
+</html>
